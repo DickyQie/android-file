@@ -1,5 +1,5 @@
-###Android----- 版本更新和 服务器下载新版本APK并安装 
-   <p>前段时间有朋友问我版本更新的问题，所以来写一篇版本更新和APK下载并安装的博客。</p> 
+#Android----- 版本更新和 服务器下载新版本APK并安装 
+<p>前段时间有朋友问我版本更新的问题，所以来写一篇版本更新和APK下载并安装的博客。</p> 
 <p>版本更新，几乎在所有的项目中都用的到，一般是这样的流程，当进入APP首页是便会检测版本是否为最新版本，不是则提示你下载更新；</p> 
 <p>版本更新需要后台和移动端共同来完成，后台一般用一个接口 来返回给移动端最新版本的信息，移动端接收信息后和APP自身版本比较，如果不相同则提示用户更新 APP。</p> 
 <p>所以当移动端开发者做完并更新版本后 打包提交到后台，后台更新APP版本信息，就可以完成版本更新了。</p> 
@@ -50,7 +50,8 @@
                         .get()
                         .url(url)
                         .build()
-                        .execute(new FileCallBack(Environment.getExternalStorageDirectory().getAbsolutePath(),"cg.apk") {//保存路径      APK名称
+                        .execute(new FileCallBack(Environment.getExternalStorageDirectory()
+                        .getAbsolutePath(),"cg.apk") {//保存路径      APK名称
                             @Override
                             public void onError(Call call, Exception e, int id) {
                             }
