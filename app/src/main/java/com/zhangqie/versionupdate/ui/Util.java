@@ -26,6 +26,7 @@ public class Util {
      * 获取移动端版本号
      * 格式可根据比较方式自己设置
      *
+	 * versionCode最初是 1.0  你可以改成1.0.0  慢慢升级改变 也可以与versionName一起设置
      * @param activity
      * @return
      */
@@ -33,12 +34,14 @@ public class Util {
         try {
             PackageManager manager = activity.getPackageManager();
             PackageInfo info = manager.getPackageInfo(activity.getPackageName(), 0);
-            String version =info.versionCode+"."+info.versionName;
+            String version =info.versionCode;
             return  version;
         } catch (Exception e) {
             return "";
         }
     }
+	
+	
 
     /****
      * 服务器下载APK文件
